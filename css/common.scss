@@ -1,0 +1,86 @@
+@import './responsive';
+
+*{
+    font-family: "Hiragino Kaku Gothic ProN";
+}
+@mixin height($height, $min-height, $max-height) {
+    height: $height;
+    min-height: $min-height;
+    max-height: $max-height;
+}
+
+@mixin flex-row {
+    display: flex;
+}
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+}
+@mixin size($width,$height) {
+    width: $width + px;
+    height: $height + px;
+}
+@mixin font($size, $weight) {
+    font-size: $size + px;
+    font-weight:$weight;
+}
+@mixin back-ground($path:null) {
+    background-image: url('#{$path}');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+// ----------------コンポーネント----------------
+.sectionHeader{
+    height: 200px;
+    margin: 30px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include mq('sur'){
+        height: 140px;
+    }
+    &__title{
+        width: auto;
+        padding-top: 30px;
+        text-align: center;
+    }
+    &__img{
+        width: 80px;
+        @include mq('sur'){
+            width: 60px;
+        }
+    }
+    &__text{
+        font-size: 220%;
+        background: linear-gradient(transparent 70% , yellow 60%);
+        @include mq('sur'){
+            font-size: 200%;
+        }
+        @include mq('iphone5'){
+            font-size: 190%;
+        }
+    }
+}
+.brand-subject{
+    width: auto;
+    min-width: 200px;
+    height: 100px;
+    text-align: center;
+    &__text{
+        border-top: 3px solid;
+        border-bottom: 3px solid;
+        font-size: 200%;
+        letter-spacing: 6px;
+        @include mq('sur'){
+            font-size: 180%;
+        }
+        @include mq('iphone8+'){
+            font-size: 150%;
+        }
+        @include mq('iphone5'){
+            font-size: 130%;
+        }
+    }
+}

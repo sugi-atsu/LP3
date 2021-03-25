@@ -1,0 +1,1080 @@
+@import './common';
+@import './responsive';
+
+.firstView-container{
+    height: 100vh;
+    display: flex;
+    background-color: white;
+    @include mq('ipadpro') {
+        @include flex-column;
+        flex-direction: column-reverse;
+    }
+    .imgWrapper{
+        width: 90%;
+        overflow: hidden;
+        position: relative;
+        @include mq('ipadpro'){
+            width: 100%;
+            height: 90%;
+        }
+        @include mq('iphone8+'){
+            height: 88%;
+        }
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0%;
+            left: 0%;
+        }
+        @for $i from 1 to 5{
+            img:nth-child(#{$i}){
+                animation: firstViewFadeIn#{$i};
+                animation-iteration-count: infinite;
+                animation-duration: 30s;
+            }
+        }
+        @keyframes firstViewFadeIn1 {
+            0%{
+                opacity: 1;
+            }
+            25%{
+                opacity: 0;
+            }
+            50%{
+                opacity: 0;
+            }
+            75%{
+                opacity: 0;
+            }
+            100%{
+                opacity: 1;
+            }
+        }
+        @keyframes firstViewFadeIn2 {
+            0%{
+                opacity: 0;
+            }
+            25%{
+                opacity: 1;
+            }
+            50%{
+                opacity: 0;
+            }
+            75%{
+                opacity: 0;
+            }
+            100%{
+                opacity: 0;
+            }
+        }
+        @keyframes firstViewFadeIn3 {
+            0%{
+                opacity: 0;
+            }
+            25%{
+                opacity: 0;
+            }
+            50%{
+                opacity: 1;
+            }
+            75%{
+                opacity: 0;
+            }
+            100%{
+                opacity: 0;
+            }
+        }
+        @keyframes firstViewFadeIn4 {
+            0%{
+                opacity: 0;
+            }
+            25%{
+                opacity: 0;
+            }
+            50%{
+                opacity: 0;
+            }
+            75%{
+                opacity: 1;
+            }
+            100%{
+                opacity: 0;
+            }
+        }
+    }
+    .navWrapper{
+        width: 10%;
+        @include flex-column;
+        @include mq('ipadpro'){
+            width: 100%;
+            height: 10%;
+            @include flex-row;
+            flex-direction: row;
+        }
+        @include mq('iphone8+'){
+            height: 12%;
+            position: relative;
+        }
+        .logo{
+            height: 60%;
+            @include flex-row;
+            justify-content: center;
+            align-items: center;
+            @include mq('ipadpro'){
+                width: 30%;
+                height: 100%;
+            }
+            a{
+                @include flex-row;
+                justify-content: center;
+                align-items: center;
+            }
+            img{
+                width: 50%;
+                @include mq('ipadpro'){
+                    width: 70%;
+                }
+                @include mq('iphone8+'){
+                    width: 80%;
+                }
+                &:hover{
+                    opacity: .7;
+                }
+            }
+        }
+        .nav{
+            @include mq('ipadpro'){
+                width: 70%;
+                height: 100%;
+            }
+            @include mq('iphone8+'){
+                width: 100%;
+                position: absolute;
+            }
+            .navList{
+                width: 100%;
+                @include flex-row;
+                justify-content: center;
+                list-style: none;
+                @include mq('ipadpro'){
+                    width: 100%;
+                    height: 100%;
+                    margin: 0;
+                    justify-content: space-evenly;
+                }
+                &__item{
+                    writing-mode: vertical-lr;
+                    text-orientation: upright;
+                    @include mq('ipadpro'){
+                        height: 100%;
+                        writing-mode: unset;
+                        text-orientation: unset;
+                        @include flex-column;
+                        justify-content: flex-end;
+                    }
+                    a{
+                        text-decoration: none;
+                        color: black;
+                        font-size: 100%;
+                        font-weight: 530;
+                        @include mq('sur'){
+                            font-size: 90%;
+                        }
+                        @include mq('iphone8+'){
+                            font-size: 70%;
+                        }
+                        &:hover{
+                            opacity: .7;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.brand-container{
+    .features-container{
+        width: 100%;
+        margin: 50px 0;
+        @include flex-column;
+        align-items: center;
+        .royalJelly{
+            height: 500px;
+            width: 100%;
+            margin-bottom: 50px;
+            @include flex-row;
+            @include mq('ipadpro'){
+                height: 900px;
+                min-height: 100;
+                @include flex-column;
+                align-items: center;
+            }
+            @include mq('iphone5'){
+                height: 1000px;
+            }
+            &__img{
+                width: 60%;
+                height: 100%;
+                background-image: url('../img/royalJelly.jpg');
+                background-size: 70%;
+                background-position: center bottom;
+                margin: 0 40px;
+                border: 1px solid;
+                border-radius: 20px;
+                box-shadow: 10px 10px ;
+                @include mq('ipadpro'){
+                    width: 80%;
+                    height: 50%;
+                    background-size: cover;
+                    margin: 20px 0;
+                }
+            }
+            &__text{
+                width: 40%;
+                height: 100%;
+                background-image: url('../img/royalJelly_text.png');
+                background-size: cover;
+                @include flex-column;
+                justify-content: center;
+                align-items: center;
+                margin: 10px;
+                @include mq('ipadpro'){
+                    width: 80%;
+                    height: 50%;
+                    background-image: url('../img/royalJelly_text--sp.png');
+                }
+                @include mq('sur'){
+                    width: 90%;
+                }
+                p{
+                    width: 90%;
+                    font-size: 130%;
+                    letter-spacing: 3px;
+                    line-height: 30px;
+                    @include mq('sur'){
+                        height: 100%;
+                        font-size: 100%;
+                        font-weight: 560;
+                    }
+                    @include mq('iphone5'){
+                        font-size: 90%;
+                    }
+                }
+            }
+        }
+        .nutrients{
+            height: auto;
+            @include flex-column;
+            align-items: center;
+            .nutrients-item{
+                width: 60%;
+                margin: 30px;
+                @include flex-row;
+                justify-content: space-around;
+                @include mq('ipadpro'){
+                    width: 95%;
+                }
+                @include mq('ipad'){
+                    @include flex-column;
+                }
+                &__commentary{
+                    width: 50%;
+                    opacity: 0;
+                    @include mq('ipad'){
+                        width: 90%;
+                    }
+                }
+                &__title{
+                    font-size: 40px;
+                    font-weight: 500;
+                    @include mq('ipadpro'){
+                        font-size: 200%;
+                    }
+                    @include mq('sur'){
+                        font-size: 180%;
+                    }
+                }
+                &__text{
+                    text-decoration: underline dotted .5px;
+                    font-size: 20px;
+                    font-weight: 500;
+                    letter-spacing: 2px;
+                    @include mq('ipadpro'){
+                        font-size: 120%;
+                    }
+                    @include mq('sur'){
+                        font-size: 100%;
+                    }
+                }
+                &__img{
+                    width: 40%;
+                    opacity: 0;
+                    @include flex-column;
+                    justify-content: flex-end;
+                    @include mq('ipad'){
+                        width: 80%;
+                    }
+                    img{
+                        width: 100%;
+                        object-fit: contain;
+                        border-radius: 10px;
+                    }
+                }
+                $movingDistance: 10%;
+                .commentaryFadein{
+                    animation: commentaryFadein 2s forwards;
+                    @keyframes commentaryFadein {
+                        0%{
+                            transform: translateX(-$movingDistance);
+                        }
+                        100%{
+                            opacity: 1;
+                            transform: translateX(0);
+                        }
+                    }
+                }
+                .imgFadein{
+                    animation: imgFadein 2s forwards;
+                    @keyframes imgFadein {
+                        0%{
+                            transform: translateX($movingDistance);
+                        }
+                        100%{
+                            opacity: 1;
+                            transform: translateX(0);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .effect-container{
+        width: 100%;
+        margin: 50px 0;
+        @include flex-column;
+        align-items: center;
+        .effect-header{
+            width: 40%;
+            @include flex-column;
+            align-items: center;
+            margin-bottom: 70px;
+            @include mq('ipadpro'){
+                width: 80%;
+            }
+            img{
+                width: 60%;
+                margin-bottom: 30px;
+            }
+            &__text{
+                width: 100%;
+                letter-spacing: 2px;
+                line-height: 30px;
+                font-size: 140%;
+                @include mq('iphone8+'){
+                    font-size: 120%;
+                }
+                @include mq('iphone5'){
+                    font-size: 100%;
+                }
+            }
+        }
+        .effect-list-erea{
+            width: 100%;
+            padding: 3% 0;
+            background: url('../img/effect_backgroundImg.jpg') no-repeat;
+            background-size: cover;
+            .effect-list{
+                width: 80%;
+                height: 100%;
+                margin: 0 auto;
+                @include flex-row;
+                justify-content: center;
+                list-style: none;
+                flex-wrap: wrap;
+                @include mq('iphone8+'){
+                    @include flex-column;
+                }
+                .row{
+                    @include flex-column;
+                    margin: 0 .2vw;
+                    @include mq('iphone8+'){
+                        @include flex-row;
+                        flex-direction: row;
+                        justify-content: center;
+                        margin: .5vw 0;
+                    }
+                }
+                .effect-cell{
+                    width: 10vw;
+                    height: 10vw;
+                    margin: .2vw 0;
+                    background-color: rgb(238, 227, 70);
+                    position: relative;
+                    border-radius: 10px;
+                    @include mq('ipadpro'){
+                        width: 13vw;
+                        height: 13vw;
+                    }
+                    @include mq('iphone8+'){
+                        width: 12vh;
+                        height: 12vh;
+                        margin: 0 .5vw;
+                    }
+                }
+                .imgWrapper{
+                    overflow: hidden;
+                    &__mask{
+                        width: 100%;
+                        height: 100%;
+                        @include flex-row;
+                        align-items: center;
+                        justify-content: center;
+                        opacity: 0;
+                        background-color: black;
+                        position: absolute;
+                        z-index: 1;
+                        @include mq('ipadpro'){
+                            opacity: .4;
+                        }
+                        &:hover{
+                            opacity: .6;
+                            cursor: pointer;
+                        }
+                        p{
+                            font-size: 100%;
+                            text-align: center;
+                            color: white;
+                            @include mq('ipad'){
+                                font-size: 80%;
+                            }
+                            @include mq('sur'){
+                                font-size: 70%;
+                            }
+                        }
+                    }
+                    img{
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        z-index: 0;
+                    }
+                }
+            }
+        }
+        .effect-modal{
+            list-style: none;
+            .effect-modal-item{
+                .description{
+                    width: 30%;
+                    @include height(1, 0, 70%);
+                    background-color: white;
+                    border-radius: 20px;
+                    position: fixed;
+                    z-index: 2;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%,-50%);
+                    @include flex-column;
+                    align-items: center;
+                    overflow: hidden;
+                    @include mq('ipadpro'){
+                        width: 60%;
+                        font-size: 120%;
+                    }
+                    @include mq('ipad'){
+                        font-size: 110%;
+                    }
+                    @include mq('sur'){
+                        width: 80%;
+                    }
+                    @include mq('iphone8+'){
+                        font-size: 90%;
+                    }
+                    @include mq('pixel'){
+                        font-size: 70%;
+                    }
+                    @include mq('iphone5'){
+                        font-size: 60%;
+                    }
+                    &__title{
+                        width: 100%;
+                        @include height(1, 0, 5%);
+                        margin-bottom: 1%;
+                        background-color: rgb(82, 80, 80);
+                        text-align: center;
+                        font-size: 100%;
+                        color: white;
+                    }
+                    &__body{
+                        width: 100%;
+                        @include height(1,40%, 60%);
+                        margin-bottom: 1%;
+                        padding: 0 30px;
+                        font-size: 100%;
+                    }
+                    &__close{
+                        width: 20%;
+                        height: 8%;
+                        margin-bottom: 2%;
+                        border: 1px solid;
+                        padding: 5px;
+                        text-align: center;
+                        font-size: 100%;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+        .effect-mask{
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            background-color: black ;
+            opacity: .5;
+            z-index: 2;
+        }
+        .hidden{
+            display: none;
+        }
+    }
+    .storys-container{
+        width: 100%;
+        margin: 50px 0;
+        @include flex-column;
+        align-items: center;
+        .owner{
+            width: 80%;
+            @include flex-row;
+            justify-content: center;
+            margin-bottom: 50px;
+            @include mq('ipadpro'){
+                width: 90%;
+                @include flex-column;
+                align-items: center;
+            }
+            &-kongouView{
+                width: 50%;
+                margin-right: 20px;
+                text-align: right;
+                @include mq('ipadpro'){
+                    width: 70%;
+                }
+                img{
+                    width: 100%;
+                    object-fit: contain;
+                }
+            }
+            &-info{
+                width: 50%;
+                @include flex-column;
+                align-items: center;
+                @include mq('ipadpro'){
+                    width: 90%;
+                    margin-top: 40px;
+                }
+                &__owner{
+                    @include flex-row;
+                    justify-content: center;
+                    @include mq('ipadpro'){
+                        align-items: center;
+                    }
+                    img{
+                        width: 30%;
+                        border-radius: 50%;
+                    }
+                }
+                &__name{
+                    margin-left: 20px;
+                    @include flex-column;
+                    &--textl{
+                        font-size: 25px;
+                        @include mq('sur'){
+                            font-size: 130%;
+                        }
+                        @include mq('iphone5'){
+                            font-size: 100%;
+                        }
+                    }
+                    &--texts{
+                        font-size: 20px;
+                        @include mq('iphone5'){
+                            font-size: 100%;
+                        }
+                    }
+                }
+                &__introduce{
+                    width: 80%;
+                    @include flex-row;
+                    margin-top: 30px;
+                    font-size: 20px;
+                    @include mq('sur'){
+                        width: 100%;
+                    }
+                    @include mq('iphone5'){
+                        font-size: 100%;
+                    }
+                }
+            }
+        }
+        .commitment{
+            width: 100%;
+            align-items: center;
+            margin: 50px 0;
+            background: url('../img/commitment-List-background.jpg') center no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            padding-bottom: 100px;
+            @include mq('ipadpro'){
+                background: url('../img/commitment-List-background-sp.jpeg') bottom no-repeat;
+                background-size: cover;
+                background-attachment: fixed;
+            }
+            &-List{
+                width: 70%;
+                margin: 0 auto;
+                list-style: none;
+                @include mq('ipadpro'){
+                    width: 95%;
+                }
+                &-item{
+                    width: 100%;
+                    min-height: 300px;
+                    margin: 20% 0;
+                    &-body{
+                        width: 45%;
+                        height: 100%;
+                        background-color: white;
+                        border: 5px solid greenyellow;
+                        border-radius: 20px;
+                        padding: 20px;
+                        position: relative;
+                        @include mq('sur'){
+                            width: 100%;
+                            min-height: 550px;
+                        }
+                        @include mq('iphone8'){
+                            min-height: 600px;
+                        }
+                    }
+                    &__img{
+                        width: 75%;
+                        object-fit: contain;
+                        position: absolute;
+                        z-index: 1;
+                        @include mq('ipad'){
+                            width: 120%;
+                        }
+                        @include mq('sur'){
+                            height: 40%;
+                        }
+                        @include mq('iphone8+'){
+                            height: 35%;
+                        }
+                    }
+                    &__title{
+                        width: 90%;
+                        color: rgb(211, 150, 75);
+                        font-size: 160%;
+                        font-weight: 550;
+                        text-decoration: underline;
+                        margin: 0 auto 20px;
+                        text-align: center;
+                        @include mq('ipad'){
+                            width: 100%;
+                            height: 100%;
+                            left: 0%;
+                            top: 0;
+                        }
+                        @include mq('sur'){
+                            font-size: 150%;
+                        }
+                        @include mq('iphone8'){
+                            font-size: 130%;
+                        }
+                        @include mq('iphone5'){
+                            font-size: 110%;
+                        }
+                    }
+                    &__text{
+                        width: 100%;
+                        height: 90%;
+                        font-size: 110%;
+                        @include mq('sur'){
+                            font-size: 110%;
+                        }
+                    }
+                    .oddImg{
+                        top: 0;
+                        left: -75%;
+                        @include mq('ipad'){
+                            left: -120%;
+                        }
+                        @include mq('sur'){
+                            top: 58%;
+                            left: -30%;
+                        }
+                        @include mq('iphone8+'){
+                            top: 57%;
+                            left: -25%;
+                        }
+                        @include mq('iphone8'){
+                            top: 55%;
+                            left: -18%;
+                        }
+                        @include mq('iphone5'){
+                            top: 60%;
+                            left: -12%;
+                        }
+                    }
+                    .oddBody{
+                        margin-left: auto;
+                        @include mq('sur'){
+                            margin-left: 0;
+                        }
+                    }
+                    .evenImg{
+                        top: 0%;
+                        right: -75%;
+                        @include mq('ipad'){
+                            left: -120%;
+                        }
+                        @include mq('sur'){
+                            top: 58%;
+                            left: -30%;
+                        }
+                        @include mq('iphone8+'){
+                            top: 57%;
+                            left: -25%;
+                        }
+                        @include mq('iphone8'){
+                            top: 55%;
+                            left: -18%;
+                        }
+                        @include mq('iphone5'){
+                            top: 60%;
+                            left: -12%;
+                        }
+                    }
+                    .evenBody{
+                        margin-right: auto;
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+.review-container{
+    width: 100%;
+    .sectionHeader{
+        background-color: white;
+    }
+    .review-list{
+        width: 80%;
+        min-height: 700px;
+        @include flex-row;
+        justify-content: center;
+        flex-wrap: wrap;
+        list-style: none;
+        margin: 80px auto;
+        @include mq('ipadpro'){
+            width: 90%;
+            min-height: 500px;
+            @include flex-column;
+            flex-wrap: nowrap;
+            margin: 0 auto;
+        }
+        &-item{
+            width: 25%;
+            margin: 0 40px;
+            position: relative;
+            @include mq('ipadpro'){
+                width: 100%;
+                position: static;
+                margin: 20px 0;
+            }
+            &__wrapper{
+                width: 100%;
+                background-color: white;
+                position: absolute;
+                top: 0;
+                left: 0;
+                border: 1px solid rgb(230, 230, 230);
+                @include mq('ipadpro'){
+                    position: static;
+                }
+                img{
+                    width: 100%;
+                    object-fit: cover;
+                    @include mq('ipadpro'){
+                        width: 30%;
+                    }
+                }
+            }
+            &__wrapper::before{
+                content: '';
+                width: 100%;
+                height: 30%;
+                background-color: rgb(247, 169, 247);
+                position: absolute;
+                top: -3%;
+                left: -4%;
+                z-index: -1;
+            }
+            &__text{
+                font-size: 130%;
+                font-weight: 530;
+                margin-bottom: 20px;
+                padding: 10px;
+                @include mq('ipadpro'){
+                    width: 100%;
+                }
+                @include mq('iphone8+'){
+                    font-size: 110%;
+                }
+                @include mq('iphone5'){
+                    font-size: 100%;
+                }
+            }
+            &__name{
+                @extend .review-list-item__text;
+                margin-top: auto;
+            }
+        }
+    }
+}
+
+.product-container{
+    width: 100%;
+    .product-list{
+        width: 80%;
+        @include flex-row;
+        flex-wrap: wrap;
+        margin: 0 auto;
+        list-style: none;
+        @include mq('ipadpro'){
+            width: 95%;
+        }
+        &-item{
+            width: 30%;
+            min-height: 200px;
+            margin: 1.5%;
+            font-size: 20px;
+            @include mq('ipadpro'){
+                font-size: 100%;
+            }
+            @include mq('sur'){
+                width: 45%;
+            }
+            @include mq('iphone5'){
+                font-size: 90%;
+            }
+            img{
+                width: 100%;
+                object-fit: contain;
+                &:hover{
+                    opacity: .7;
+                    cursor: pointer;
+                }
+            }
+            &__textWrapper{
+                width: 100%;
+                height: 30%;
+            }
+            &__name{
+                font-weight: 580;
+                margin-bottom: 10px;
+            }
+            &__price{
+                font-weight: 580;
+            }
+        }
+    }
+}
+
+.FAQ{
+    &-container{
+        .sectionHeader{
+            background-color: white;
+        }
+        background-color: rgb(236, 208, 235);
+        padding-bottom: 50px;
+    }
+    &-list{
+        width: 50%;
+        margin: 0 auto;
+        list-style: none;
+        @include mq('ipadpro'){
+            width: 80%;
+        }
+        &-item{
+            width: 100%;
+            margin-bottom: 20px;
+            &__header{
+                width: 100%;
+                padding: 10px;
+                background-color: rgb(241, 132, 132);
+                font-size: 100%;
+                font-weight: 550;
+                cursor: pointer;
+                &::before{
+                    font-family: "Font Awesome 5 Free";
+                    content: '\f055';
+                }
+            }
+            .open{
+                &::before{
+                    font-family: "Font Awesome 5 Free";
+                    content: '\f056';
+                }
+            }
+            &__body{
+                height: 0;
+                overflow: hidden;
+                box-shadow: 5px 5px;
+                background-color: white;
+            }
+            .is_open{
+                height: auto;
+                min-height: 75px;
+                padding: 10px;
+                font-size: 100%;
+                line-height: 30px;
+            }
+        }
+    }
+}
+
+.about-container{
+    width: 100%;
+    .about-body{
+        height: 500px;
+        @include flex-row;
+        justify-content: center;
+        @include mq('ipad'){
+            width: 100%;
+            height: 800px;
+            @include flex-column;
+        }
+        .info{
+            width: 50%;
+            background-color: rgb(212, 212, 212);
+            @include flex-row;
+            align-items: center;
+            justify-content: center;
+            @include mq('ipad'){
+                width: 100%;
+                height: 50%;
+            }
+            &-Wrapper{
+                width: 80%;
+                height: 80%;
+                background-color: white;
+                @include flex-column;
+                align-items: center;
+                @include mq('ipad'){
+                    height: 95%;
+                }
+            }
+            &-logo{
+                width: 100%;
+                height: 30%;
+                @include flex-row;
+                align-items: center;
+                justify-content: center;
+                a{
+                    width: 25%;
+                    @include mq('ipadpro'){
+                        width: 40%;
+                    }
+                    @include mq('ipad'){
+                        height: 70%;
+                    }
+                    img{
+                        width: 100%;
+                        @include mq('ipad'){
+                            height: 100%;
+                            object-fit: contain;
+                        }
+                    }
+                }
+            }
+            &-list{
+                width: 70%;
+                height: 70%;
+                list-style: none;
+                font-size: 18px;
+                font-weight: 580;
+                @include flex-column;
+                justify-content: center;
+                @include mq('ipad'){
+                    width: 90%;
+                }
+                @include mq('iphone5'){
+                    font-size: 15px;
+                }
+                li{
+                    margin: 5px 0;
+                }
+            }
+        }
+        .map{
+            width: 50%;
+            @include mq('ipad'){
+                width: 100%;
+                height: 50%;
+            }
+            iframe{
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}
+
+footer{
+    width: 100%;
+    height: 100px;
+    background-color: black;
+    @include flex-column;
+    align-items: center;
+    padding: 10px;
+    nav{
+        width: 100%;
+        height: 20%;
+        .navList{
+            width: 50%;
+            @include flex-row;
+            list-style: none;
+            justify-content: space-around;
+            margin: 0 auto;
+            @include mq('ipad'){
+                width: 100%;
+            }
+            @include mq('iphone8+'){
+                justify-content: center;
+            }
+            &__item{
+                width: 20%;
+                text-align: center;
+                a{
+                    width: 100%;
+                    color: white;
+                    font-size: 80%;
+                    @include mq('iphone8'){
+                        font-size: 60%;
+                    }
+                }
+            }
+        }
+    }
+    small{
+        color: white;
+        margin-top: auto;
+    }
+}

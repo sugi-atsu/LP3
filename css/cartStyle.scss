@@ -1,0 +1,322 @@
+@import './common';
+@import './responsive';
+.header{
+    width: 60%;
+    @include flex-row;
+    justify-content: center;
+    margin: 0 auto 100px;
+    border-bottom: 1px solid;
+    @include mq('ipadpro'){
+        width: 80%;
+    }
+    @include mq('sur'){
+        margin: 0 auto 50px;
+    }
+    &__logo{
+        width: 15%;
+        @include mq('ipadpro'){
+            width: 20%;
+        }
+        @include mq('sur'){
+            width: 30%;
+        }
+        a{
+            width: 100%;
+            img{
+                width: 100%;
+            }
+        }
+    }
+    &__title{
+        margin: auto 0;
+        color: dimgrey;
+        font-size: 300%;
+        font-weight: 600;
+        padding-left: 10%;
+        @include mq('ipad'){
+            font-size: 250%;
+        }
+        @include mq('sur'){
+            font-size: 180%;
+            padding-left: 5%;
+        }
+        @include mq('iphone8+'){
+            font-size: 120%;
+        }
+        @include mq('iphone5'){
+            font-size: 110%;
+        }
+    }
+}
+.product{
+    min-height: 65vh;
+}
+.product-container{
+    width: 60%;
+    height: 100%;
+    margin: 0 auto 50px;
+    @include flex-row;
+    @include mq('ipadpro'){
+        width: 80%;
+        @include flex-column;
+    }
+    .description{
+        width: 50%;
+        height: 100%;
+        @include mq('ipadpro'){
+            width: 100%;
+            margin-bottom: 40px;
+        }
+        &__img{
+            width: 60%;
+            margin-bottom: 20px;
+            @include mq('ipadpro'){
+                width: 50%;
+            }
+            @include mq('sur'){
+                width: 70%;
+            }
+            img{
+                object-fit: contain;
+                width: 100%;
+            }
+        }
+        &__text{
+            width: 70%;
+            @include mq('ipadpro'){
+                width: 100%;
+                font-size: 130%;
+            }
+            @include mq('ipad'){
+                font-size: 120%;
+            }
+            @include mq('iphone8'){
+                font-size: 100%;
+            }
+        }
+    }
+    .cart{
+        width: 50%;
+        font-size: 150%;
+        @include flex-column;
+        justify-content: space-around;
+        @include mq('ipadpro'){
+            width: 100%;
+        }
+        @include mq('sur'){
+            font-size: 130%;
+        }
+        @include mq('iphone5'){
+            font-size: 120%;
+        }
+        &-title{
+            @include mq('ipadpro'){
+                margin-bottom: 10px;
+            }
+        }
+        &-price{
+            @include mq('ipadpro'){
+                margin-bottom: 10px;
+            }
+            
+        }
+        &-subtotal{
+            margin-top: 20px;
+            border-top: 1px solid;
+            font-weight: 600;
+            @include mq('ipadpro'){
+                margin-bottom: 10px;
+            }
+        }
+        &-quantity{
+            &__changeWrapper{
+                @include flex-row;
+                input{
+                    width: 60px;
+                    border: 1px solid rgb(77, 77, 77);
+                    margin-right: 10px;
+                    &[type=number]::-webkit-inner-spin-button,
+                    &[type=number]::-webkit-outer-spin-button {
+                        -webkit-appearance: none;
+                        margin: 0;
+                    }
+                    &[type="number"] {
+                        -moz-appearance:textfield;
+                    }
+                }
+                ul{
+                    list-style: none;
+                    font-size: 50%;
+                    .fas{
+                        cursor: pointer;
+                    }
+                }
+            }
+
+        }
+        &__button{
+            min-width: 0px;
+            max-width: 70%;
+            background-color: rgb(97, 197, 255);
+            color: white;
+            @include mq('ipadpro'){
+                max-width: 50%;
+            }
+            @include mq('iphone8+'){
+                max-width: 70%;
+            }
+            @include mq('iphone5'){
+                max-width: 90%;
+            }
+        }
+    }
+}
+.guide-container{
+    width: 100%;
+    @include flex-row;
+    background-color: #F5F5F5;
+    @include mq('ipad'){
+        @include flex-column;
+    }
+    .delivery{
+        width: 50%;
+        @include flex-column;
+        align-items: center;
+        margin-top: 20px;
+        @include mq('ipad'){
+            width: 100%;
+        }
+        @include mq('sur'){
+            font-size: 90%;
+        }
+        @include mq('iphone8'){
+            font-size: 80%;
+        }
+        @include mq('iphone5'){
+            font-size: 70%;
+        }
+        &__title{
+            width: 80%;
+            border-bottom: 1px solid;
+            margin-bottom: 10px;
+            @include mq('ipad'){
+                width: 90%;
+            }
+        }
+        &-list{
+            width: 80%;
+            @include flex-row;
+            justify-content: space-between;
+            list-style: none;
+            @include mq('ipad'){
+                width: 90%;
+            }
+            &-item{
+                width: 45%;
+                &__text{
+                    line-height: 25px;
+                    margin-top: 10px;
+                }
+            }
+        }
+    }
+    .payment{
+        @extend .delivery;
+        &__title{
+            @extend .delivery__title;
+        }
+        &-list{
+            @extend .delivery-list;
+            &-item{
+                @extend .delivery-list-item;
+                p{
+                    @extend .delivery-list-item__text;
+                }
+                img{
+                    width: 60%;
+                }
+            }
+        }
+    }
+}
+#modal{
+    width: 30%;
+    height: 20%;
+    background-color: white;
+    position: fixed;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    @include mq('ipadpro'){
+        width: 40%;
+        height: 15%;
+    }
+    @include mq('sur'){
+        width: 60%;
+        height: 20%;
+    }
+    @include mq('iphone8+'){
+        width: 90%;
+    }
+    @include mq('iphone8+'){
+        height: 30%;
+    }
+    .modal-body{
+        width: 100%;
+        height: 100%;
+        @include flex-column;
+        align-items: center;
+        justify-content: center;
+        .message{
+            font-size: 150%;
+            margin-bottom: 10px;
+            @include mq('sur'){
+                font-size: 130%;
+            }
+        }
+        .buttonWrapper{
+            width: 100%;
+            @include flex-row;
+            justify-content: center;
+            font-size: 100%;
+            @include mq('sur'){
+                font-size: 100%;
+            }
+            @include mq('iphone5'){
+                font-size: 90%;
+            }
+            .button{
+                width: 40%;
+                margin: 0 2%;
+                color: #F5F5F5;
+                background-color: lightgrey;
+                text-decoration: none;
+                text-align: center;
+                border: 1px solid;
+                padding: 1px;
+            }
+            #moveOnCart{
+                color: white;
+                background-color: orange;
+            }
+        }
+    }
+}
+#mask{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    background-color: black ;
+    opacity: .5;
+    z-index: 2;
+}
+.hidden{
+    display: none;
+}
+footer{
+    @include mq('iphone5'){
+        font-size: 90%;
+    }
+}
