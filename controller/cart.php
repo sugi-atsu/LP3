@@ -1,5 +1,5 @@
 <?php
-require_once('./controller/data.php');
+require_once('./data.php');
 
 ?>
 
@@ -8,11 +8,11 @@ require_once('./controller/data.php');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/cartStyle.css">
-    <link rel="stylesheet" href="./css/common.css">
-    <link rel="stylesheet" href="./css/reset.css">
-    <link rel="shortcut icon" href="./img/favicon.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/cartStyle.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="shortcut icon" href="../img/favicon.jpg" type="image/x-icon">
     <script src="https://kit.fontawesome.com/83b9443572.js" crossorigin="anonymous"></script>
     <title>商品詳細</title>
 </head>
@@ -20,7 +20,7 @@ require_once('./controller/data.php');
   <main>
     <div class="header">
       <div class="header__logo">
-        <a href="./index.php"><img src="./img/logo_horizontal.png" alt=""></a>
+        <a href="../index.php"><img src="../img/logo_horizontal.png" alt=""></a>
       </div>
       <div class="header__title">ショッピングカート</div>
     </div>
@@ -28,7 +28,7 @@ require_once('./controller/data.php');
       <div class="product-container">
         <div class="description">
           <div class="description__img">
-            <img src="./img/product-list-item_<?php echo $img[$productId]; ?>" alt="">
+            <img src="../img/product-list-item_<?php echo $img[$productId]; ?>" alt="">
           </div>
           <div class="description__text">
           <?php echo $description[$productId]; ?>
@@ -101,7 +101,7 @@ require_once('./controller/data.php');
                 分割払い、リボ払い可能です。<br>
                 ※支払い回数はクレジットカード会社によって異なります。
               </p>
-              <img src="./img/payment-list_img.jpg" alt="">
+              <img src="../img/payment-list_img.jpg" alt="">
             </li>
           </ul>
         </div>
@@ -115,7 +115,7 @@ require_once('./controller/data.php');
           カートに追加しました
         </div>
         <div class="buttonWrapper">
-          <a class="button" href="./index.php#product">買い物を続ける</a>
+          <a class="button" href="../index.php#product">買い物を続ける</a>
           <button class="button" id="moveOnCart">カートに進む</button>
         </div>
       </div>
@@ -125,6 +125,6 @@ require_once('./controller/data.php');
   <footer>
     <small>Copyright © kongouApiary All Rights Reserved.</small>
   </footer>
-  <script src="./script/cart.js"></script>
+  <script src="../script/cart.js"></script>
 </body>
 </html>

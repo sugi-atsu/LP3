@@ -106,4 +106,6 @@ window.addEventListener('scroll',()=>{
         commitment_imgScroll();
     }
 });
-
+window.addEventListener('load', ()=>{
+    commitment_imgScrollStop();
+})
