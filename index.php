@@ -405,7 +405,7 @@
         <ul class="product-list">
           <li class="product-list-item">
             <a href="./controller/cart.php?productId=0">
-              <img src="./img/product-list-item_純国産ローヤルゼリー国産レンゲはちみつミックス.jpeg" alt="商品画像" class="product-list-item__img">
+              <img src="./img/product-list-item_0.jpeg" alt="商品画像" class="product-list-item__img">
             </a>
             <div class="product-list-item__textWrapper">
               <p class="product-list-item__name">
@@ -418,7 +418,7 @@
           </li>
           <li class="product-list-item">
             <a href="./controller/cart.php?productId=1">
-              <img src="./img/product-list-item_純国産生ローヤルゼリー30ｇ.jpeg" alt="商品画像" class="product-list-item__img">
+              <img src="./img/product-list-item_1.jpeg" alt="商品画像" class="product-list-item__img">
             </a>
             <div class="product-list-item__textWrapper">
               <p class="product-list-item__name">
@@ -431,7 +431,7 @@
           </li>
           <li class="product-list-item">
             <a href="./controller/cart.php?productId=2">
-              <img src="./img/product-list-item_純国産生ローヤルゼリー100ｇ.jpeg" alt="商品画像" class="product-list-item__img">
+              <img src="./img/product-list-item_2.jpeg" alt="商品画像" class="product-list-item__img">
             </a>
             <div class="product-list-item__textWrapper">
               <p class="product-list-item__name">
@@ -444,7 +444,7 @@
           </li>
           <li class="product-list-item">
             <a href="./controller/cart.php?productId=3">
-              <img src="./img/product-list-item_純国産生ローヤルゼリー　原乳100g.jpeg" alt="商品画像" class="product-list-item__img">
+              <img src="./img/product-list-item_3.jpeg" alt="商品画像" class="product-list-item__img">
             </a>
             <div class="product-list-item__textWrapper">
               <p class="product-list-item__name">
@@ -457,7 +457,7 @@
           </li>
           <li class="product-list-item">
             <a href="./controller/cart.php?productId=4">
-              <img src="./img/product-list-item_カプセル.png" alt="商品画像" class="product-list-item__img">
+              <img src="./img/product-list-item_4.jpeg" alt="商品画像" class="product-list-item__img">
             </a>
             <div class="product-list-item__textWrapper">
               <p class="product-list-item__name">

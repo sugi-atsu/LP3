@@ -28,7 +28,7 @@ require_once('./data.php');
       <div class="product-container">
         <div class="description">
           <div class="description__img">
-            <img src="../img/product-list-item_<?php echo $img[$productId]; ?>" alt="">
+            <img src="../img/product-list-item_<?php echo $productId; ?>.jpeg" alt="">
           </div>
           <div class="description__text">
           <?php echo $description[$productId]; ?>
